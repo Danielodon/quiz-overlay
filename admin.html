@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Steuerung</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Quiz Steuerung</h1>
+    <button onclick="nextQuestion()">Nächste Frage</button>
+
+    <h3>Punktestand</h3>
+    <ul id="scoreList"></ul>
+
+    <script>
+        const socket = io("https://quiz-server.up.railway.app");
+
+        socket.on("updateScoreboard", (scores) => {
+            const scoreList = document.getElementById("scoreList");
+            scoreList.innerHTML = "";
+            for (const [player, points] of Object.entries(scores)) {
+                scoreList.innerHTML += `<li>${player}: ${points} Punkte</li>`;
+            }
+        });
+
+        function nextQuestion() {
+            socket.emit("nextQuestion");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+    {
+        "question": "Was ist die Hauptstadt von Frankreich?",
+        "answers": ["Berlin", "Paris", "Madrid"],
+        "correct": 1
+    },
+    {
+        "question": "Wie viele Planeten hat unser Sonnensystem?",
+        "answers": ["7", "8", "9"],
+        "correct": 1
+    },
+    {
+        "question": "Welches Element hat das chemische Symbol 'O'?",
+        "answers": ["Gold", "Oxygen", "Osmium"],
+        "correct": 1
+    }
+]
